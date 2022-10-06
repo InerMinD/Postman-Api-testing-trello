@@ -1,0 +1,48 @@
+ 
+API: GET /api/v1/Authors
+ *Test Case: response should be 200 OK
+ *Expected Result: 200 OK
+ *Actual Result: 200 OK
+ *Status: Pass
+..................
+API: GET /api/v1/Authors
+ *Test Case:Objects inside response contain, id, idBook, firstName, lastName.
+ *Expected Result: objects inside response contain id,idBook,firstName,lastName .
+ *Actual Result: objects inside response contain id,idBook,firstName,lastName .
+ *Status: Pass
+...................
+API: POST /api/v1/Authors
+ *Test Case: Register a new valid Author successfully and response code "201 Created"
+ *Expected Result: Register a new valid Author successfully and response code "201 Created".
+ *Actual Result: Register a new valid Author successfully and response code "200" .
+ *Status: Fail
+...................
+API: POST/api/v1/Authors
+ *Test Case:request body should have firstname mandatory
+ *Expected Result: The request should fail and the response code should be 400 if firstname is missed in the request body
+ *Actual Result: Registered a new valid Author successfully and response code "200" .
+ *Status: Fail
+...................
+API: POST /api/v1/Authors
+ *Test Case:request body should have lastname mandatory
+ *Expected Result: The request should fail and the response code should be 400 if lastname is missed in the request body
+ *Actual : Request failed and response code is 400
+ *Status: Pass
+....................
+API: GET /api/v1/Authors/authors/books/{idBook}
+ *Test Case: Searching with valid idBook should return relative data in response body
+ *Expected Result:Searching with valid idBook like 1 then all returned results in response body should contain idBook = 1
+ *Actual Result: response body contains relative data with all idBook =1 .
+ *Status: Pass
+....................
+API: PUT /api/v1/Authors/{id}
+ *Test Case: Author's data is updated successfully.
+ *Expected Result:Author's data (first name , lastname) updates successfully
+ *Actual Result:Author's data updated (Fisrstname,lastName) updates successfully
+ *Status: Pass
+....................
+API: GET /api/v1/Authors/{id}
+ *Test Case: The author's data is changed in GET request.
+ *Expected Result:Author's data changed to new values
+ *Actual Result:Author's data did not updates to new values 
+ *Status: Fail
